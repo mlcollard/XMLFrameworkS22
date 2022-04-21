@@ -231,7 +231,7 @@ namespace TemplateXMLParser {
                     if (endpc == buffer.cend())
                         throw XMLDocumentError("parser error: incomplete start tag");
                 }
-            } else if (intag && *pc != '>' && *pc != '/' && (int) std::distance(pc, buffer.cend()) > strlen("xmlns") && std::string(pc, std::next(pc, strlen("xmlns"))) == "xmlns"
+            } else if (intag && *pc != '>' && *pc != '/' && (size_t) std::distance(pc, buffer.cend()) > strlen("xmlns") && std::string(pc, std::next(pc, strlen("xmlns"))) == "xmlns"
                 && (*std::next(pc, strlen("xmlns")) == ':' || *std::next(pc, strlen("xmlns")) == '=')) {
                 // parse namespace
                 std::advance(pc, strlen("xmlns"));
