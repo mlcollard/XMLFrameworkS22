@@ -22,6 +22,5 @@ std::unique_ptr<XMLDocumentParser> XMLParserFactory::factory(int size) {
 
     // @TODO Make it so that there is only one parser object in the entire
     //       program, no matter where it is called
-
-    return std::unique_ptr<XMLDocumentTemplateParser>();
+    return std::unique_ptr<XMLDocumentTemplateParser>(new XMLDocumentTemplateParser());
 }
